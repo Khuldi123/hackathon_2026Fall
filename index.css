@@ -1,0 +1,1710 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --background: #EAF4FF;
+    --primary: #3478F6;
+    --primary-dark: #2057C5;
+    --text: #102A43;
+    --muted: #69829C;
+    --white: #FFFFFF;
+    --teal: #14B8A6;
+    --border: #DDE9F7;
+    --danger: #D83B4D;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'DM Sans', Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    display: flex;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: 'Manrope', Arial, sans-serif;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 6px 0;
+}
+
+h2 {
+    font-size: 21px;
+    margin-top: 0;
+}
+
+p {
+    line-height: 1.7;
+}
+
+small, .muted {
+    color: var(--muted);
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 255px;
+    background: white;
+    padding: 30px 18px;
+    border-right: 1px solid var(--border);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.brand h2 {
+    color: var(--primary);
+    font-size: 28px;
+    letter-spacing: -1.5px;
+    margin-bottom: 5px;
+}
+
+.brand p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 0;
+}
+
+.nav-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    margin: 32px 12px 12px;
+}
+
+nav button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    color: #536D88;
+    margin: 5px 0;
+    padding: 13px;
+    font-size: 14px;
+}
+
+nav button.active,
+nav button:hover {
+    background: #E7F0FF;
+    color: var(--primary-dark);
+}
+
+.sidebar-footer {
+    border-top: 1px solid var(--border);
+    margin-top: 30px;
+    padding: 15px;
+}
+
+/* MAIN DASHBOARD */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 35px 42px;
+    max-width: 1600px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+header small {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* BUTTONS */
+
+button {
+    border: none;
+    border-radius: 12px;
+    background: var(--primary);
+    color: white;
+    padding: 12px 18px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    filter: brightness(0.95);
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #83B8FF;
+    outline-offset: 2px;
+}
+
+.secondary {
+    background: #E8F1FF;
+    color: var(--primary-dark);
+}
+
+.emergency-btn {
+    background: #FFF0F2;
+    color: var(--danger);
+    border: 1px solid #FFD2D9;
+}
+
+/* CARDS */
+
+.card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 30px rgba(42, 92, 160, 0.06);
+    animation: appear 0.3s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    background: linear-gradient(120deg, #2057C5, #559AFF);
+    color: white;
+    border: none;
+    min-height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "♡";
+    position: absolute;
+    right: 20px;
+    top: -80px;
+    font-size: 330px;
+    color: rgba(255,255,255,0.12);
+    pointer-events: none;
+}
+
+.hero h2 {
+    font-size: 40px;
+    letter-spacing: -1.5px;
+    margin: 12px 0;
+}
+
+.hero small {
+    color: #DCEAFF;
+    letter-spacing: 2px;
+}
+
+.hero .secondary {
+    background: white;
+    color: var(--primary-dark);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.grid .card {
+    margin-bottom: 0;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.stat {
+    color: var(--primary);
+    font-size: 32px;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* PROGRESS BARS */
+
+.progress {
+    height: 10px;
+    background: #DDEBFF;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 18px 0;
+}
+
+.progress span {
+    display: block;
+    height: 100%;
+    background: var(--primary);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+.hero .progress {
+    background: rgba(255,255,255,0.25);
+    max-width: 550px;
+}
+
+.hero .progress span {
+    background: #8BE9DA;
+}
+
+/* INPUTS AND FORMS */
+
+label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input:not([type="checkbox"]),
+textarea,
+select {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #CCDDF1;
+    border-radius: 11px;
+    margin: 8px 0 18px;
+    font: inherit;
+    color: var(--text);
+    background: #F7FAFF;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid #EAF0F8;
+}
+
+.task input {
+    width: 19px;
+    height: 19px;
+    accent-color: var(--primary);
+}
+
+.entry {
+    padding: 16px;
+    background: #F0F6FF;
+    border-radius: 12px;
+    margin: 12px 0;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.pill {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 30px;
+    background: #E5F0FF;
+    color: var(--primary-dark);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* RECOVERY TIMELINE */
+
+.timeline {
+    border-left: 3px solid #B1D0FF;
+    padding-left: 24px;
+    margin-left: 8px;
+}
+
+.milestone {
+    position: relative;
+    padding-bottom: 25px;
+}
+
+.milestone::before {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--primary);
+    left: -32px;
+    top: 4px;
+    border: 3px solid white;
+}
+
+/* NUTRITION */
+
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.food-card {
+    padding: 20px;
+    border-radius: 16px;
+    background: #F0F7FF;
+    border: 1px solid #DCEAFF;
+}
+
+.food-card span {
+    font-size: 36px;
+}
+
+.food-card p {
+    font-size: 14px;
+}
+
+.water-number {
+    font-size: 45px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+/* SAFETY CENTER */
+
+.level {
+    border-left: 5px solid var(--teal);
+    background: #EAFBF6;
+    padding: 18px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.level.urgent {
+    background: #FFF7E7;
+    border-color: #E8A12C;
+}
+
+.level.emergency {
+    background: #FFF0F2;
+    border-color: var(--danger);
+}
+
+#notification {
+    padding: 20px;
+    border-radius: 12px;
+    background: #FFF0F2;
+    color: #A5283B;
+    border: 1px solid #F2B8C0;
+    margin-bottom: 20px;
+}
+
+/* LED MATRIX */
+
+.matrix {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 5px;
+    background: #19252F;
+    padding: 15px;
+    border-radius: 12px;
+    width: 165px;
+    flex-shrink: 0;
+}
+
+.dot {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #414D56;
+}
+
+.dot.on {
+    background: #FF4141;
+    box-shadow: 0 0 7px #FF414180;
+}
+
+/* FOOTER */
+
+footer {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 30px;
+    line-height: 1.8;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 800px) {
+    body {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 18px;
+    }
+
+    nav {
+        display: flex;
+        overflow-x: auto;
+    }
+
+    nav button {
+        width: auto;
+        white-space: nowrap;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    .main-content {
+        padding: 18px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        gap: 8px;
+    }
+
+    .stats .card {
+        padding: 12px;
+    }
+
+    .stat {
+        font-size: 22px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+}
+
+/* ==================================
+   FOODS TO AVOID
+================================== */
+
+.avoid-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.avoid-card {
+    background: #FFFFFF;
+    border: 1px solid #DDE9F7;
+    border-radius: 20px;
+    padding: 24px;
+    transition: 0.3s ease;
+}
+
+.avoid-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(52,120,246,0.12);
+}
+
+.food-icon {
+    font-size: 48px;
+    background: #FFF1F2;
+    width: 85px;
+    height: 85px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.avoid-tag {
+    display: inline-block;
+    background: #FFF0F2;
+    color: #D83B4D;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.avoid-card h3 {
+    font-size: 21px;
+    margin-top: 18px;
+}
+
+.avoid-card p {
+    color: #536D88;
+    font-size: 15px;
+}
+
+.healthy-swap {
+    background: #E9FAF4;
+    color: #147D64;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 18px;
+}
+
+.healthy-swap p {
+    color: #147D64;
+    margin-bottom: 0;
+}
+
+
+/* ==================================
+   SYMPTOM RECOVERY GUIDE
+================================== */
+
+.severity-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.severity-header h2 {
+    margin: 5px 0 0;
+}
+
+.severity-header small {
+    color: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.severity-header.routine {
+    background: #E7F9EF;
+    color: #16803C;
+}
+
+.severity-header.urgent {
+    background: #FFF4DC;
+    color: #996000;
+}
+
+.severity-header.critical {
+    background: #FFE9EC;
+    color: #C92C40;
+}
+
+.severity-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.symptom-item {
+    padding: 20px 5px;
+    border-bottom: 1px solid #E5EDF7;
+}
+
+.symptom-item:last-child {
+    border-bottom: none;
+}
+
+.symptom-item h3 {
+    font-size: 18px;
+    margin: 0 0 8px;
+}
+
+.symptom-item p {
+    color: #536D88;
+    margin: 0;
+    font-size: 15px;
+}
+
+.call-emergency {
+    display: block;
+    text-align: center;
+    background: #D83B4D;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 16px;
+    border-radius: 12px;
+    margin-top: 25px;
+}
+
+.call-emergency:hover {
+    background: #B92538;
+}
+
+
+/* ==================================
+   DASHBOARD QUICK ACCESS
+================================== */
+
+.guide-shortcut {
+    border-left: 5px solid var(--primary);
+}
+
+.guide-shortcut .shortcut-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.guide-shortcut p {
+    color: var(--muted);
+}
+
+.search-empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 20px;
+}
+
+
+/* ==================================
+   MOBILE RESPONSIVENESS
+================================== */
+
+@media (max-width: 800px) {
+
+    .avoid-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .severity-header h2 {
+        font-size: 18px;
+    }
+
+}
+
+/* ==================================
+   DAILY RECOVERY REMINDER
+================================== */
+
+.hero-with-reminder {
+    padding-right: 43%;
+    min-height: 365px;
+}
+
+/* Remove the large background heart */
+
+.hero-with-reminder::after {
+    display: none;
+}
+
+/* Reminder container */
+
+.daily-reminder {
+    position: absolute;
+    right: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 37%;
+    max-width: 440px;
+
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.30);
+
+    backdrop-filter: blur(15px);
+    border-radius: 22px;
+    padding: 25px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.reminder-icon {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.reminder-label {
+    color: #DCEAFF !important;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.daily-reminder h3 {
+    color: white;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.daily-reminder p {
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Reminder action button */
+
+.reminder-action {
+    background: white;
+    color: #2057C5;
+    width: 100%;
+    font-size: 13px;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+/* Reminder navigation */
+
+.reminder-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.reminder-controls button {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 8px;
+}
+
+.reminder-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+}
+
+.reminder-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    transition: 0.3s ease;
+}
+
+.reminder-dot.selected {
+    background: white;
+    width: 20px;
+    border-radius: 10px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 1200px) {
+
+    .hero-with-reminder {
+        padding-right: 25px;
+    }
+
+    .daily-reminder {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+
+        width: 100%;
+        max-width: none;
+        margin-top: 25px;
+    }
+
+}
+
+/* FULL EDGE-TO-EDGE REMINDER */
+
+.hero-with-reminder {
+    display: block;
+    position: relative;
+    padding: 30px;
+    padding-right: 43%;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.hero-with-reminder::after {
+    display: none;
+}
+
+.daily-reminder {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 40%;
+    max-width: none;
+
+    transform: none;
+    margin: 0;
+    padding: 30px;
+
+    border: none;
+    border-left: 1px solid rgba(255,255,255,0.25);
+    border-radius: 0;
+
+    background: rgba(255,255,255,0.18);
+    box-shadow: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reminder-icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.daily-reminder h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.daily-reminder p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.reminder-controls {
+    margin-top: 18px;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 1000px) {
+
+    .hero-with-reminder {
+        padding: 25px;
+        padding-bottom: 0;
+    }
+
+    .daily-reminder {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+
+        width: calc(100% + 50px);
+        margin: 25px -25px 0;
+        padding: 25px;
+
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.25);
+    }
+}
+
+/* ============================================
+   COMPACT OVERVIEW PROGRESS TRACKERS
+============================================ */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.stats .circular-card {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+
+    align-items: center;
+
+    column-gap: 14px;
+    row-gap: 4px;
+
+    padding: 16px;
+    margin: 0;
+
+    min-height: 110px;
+
+    text-align: left;
+
+    border-radius: 18px;
+    background: #FFFFFF;
+
+    box-shadow: 0 4px 15px rgba(16,42,67,0.04);
+}
+
+
+/* SMALL PROGRESS CIRCLE */
+
+.circular-progress {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+
+    width: 72px;
+    height: 72px;
+
+    margin: 0;
+}
+
+.ring-background {
+    stroke: #E5EDF7;
+    stroke-width: 9;
+}
+
+.ring-fill {
+    stroke-width: 9;
+    stroke-linecap: round;
+}
+
+
+/* NUMBER INSIDE CIRCLE */
+
+.ring-text strong {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+/* Remove the extra percentage underneath */
+
+.ring-text small {
+    display: none;
+}
+
+
+/* CARD TITLE */
+
+.circular-card > small {
+    grid-column: 2;
+    grid-row: 1;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+    color: var(--muted);
+}
+
+
+/* CARD DESCRIPTION */
+
+.circular-card p {
+    grid-column: 2;
+    grid-row: 2;
+
+    font-size: 12px;
+    line-height: 1.4;
+
+    margin: 0;
+
+    color: var(--text);
+}
+
+
+/* VIEW DETAILS LINK */
+
+.circular-card button {
+    grid-column: 2;
+    grid-row: 3;
+
+    background: transparent;
+    color: var(--primary);
+
+    border: none;
+    padding: 0;
+
+    width: fit-content;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    text-align: left;
+}
+
+.circular-card button:hover {
+    background: transparent;
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+
+/* ============================================
+   MEET JOE / PATIENT STORY
+============================================ */
+
+.story {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    padding: 24px;
+
+    border-radius: 20px;
+}
+
+.story .avatar {
+    width: 75px;
+    height: 75px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #DCEBFF,
+        #B7D5FF
+    );
+
+    color: #2057C5;
+
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.story h2 {
+    margin-top: 0;
+}
+
+.story p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+
+/* ============================================
+   SEPARATE CALENDAR PAGE
+============================================ */
+
+.recovery-calendar {
+    width: 100%;
+    padding: 30px;
+}
+
+.calendar-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 35px;
+}
+
+.calendar-day {
+    min-height: 45px;
+    aspect-ratio: 1.3;
+}
+
+
+/* ============================================
+   RESPONSIVE DESIGN
+============================================ */
+
+@media (max-width: 1100px) {
+
+    .stats .circular-card {
+        grid-template-columns: 58px minmax(0, 1fr);
+        padding: 12px;
+        column-gap: 10px;
+    }
+
+    .circular-progress {
+        width: 58px;
+        height: 58px;
+    }
+
+    .ring-text strong {
+        font-size: 14px;
+    }
+
+    .calendar-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stats .circular-card {
+        grid-template-columns: 72px minmax(0, 1fr);
+    }
+
+    .circular-progress {
+        width: 72px;
+        height: 72px;
+    }
+
+    .story {
+        align-items: flex-start;
+    }
+
+}
+
+/* ============================================
+   CAREBEYOND FINAL OVERVIEW DESIGN
+============================================ */
+
+
+/* MAIN WELCOME BANNER */
+
+.hero-with-reminder {
+    background: #4C60CD;
+    min-height: 320px;
+    padding: 24px;
+    padding-right: 42%;
+    border-radius: 22px;
+    margin-bottom: 16px;
+}
+
+.hero-with-reminder h2 {
+    font-size: 34px;
+    margin: 14px 0;
+    letter-spacing: -0.7px;
+}
+
+.hero-with-reminder h3 {
+    font-size: 22px;
+    margin: 16px 0;
+}
+
+.hero-with-reminder p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.hero-with-reminder small {
+    letter-spacing: 0;
+    font-size: 13px;
+}
+
+.hero-with-reminder .progress {
+    height: 10px;
+    margin: 12px 0;
+    background: rgba(255,255,255,0.28);
+}
+
+.hero-with-reminder .secondary {
+    padding: 12px 15px;
+}
+
+
+/* EDGE-TO-EDGE RECOVERY REMINDER */
+
+.daily-reminder {
+    background: #7485DD;
+    width: 40%;
+    padding: 22px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.daily-reminder h3 {
+    font-size: 24px;
+    margin: 12px 0;
+}
+
+.daily-reminder p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.reminder-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.reminder-action {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.reminder-controls {
+    margin-top: 10px;
+}
+
+
+/* ============================================
+   COMPACT CIRCULAR TRACKERS
+============================================ */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.stats .circular-card {
+    display: grid;
+
+    grid-template-columns: 78px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+
+    align-content: center;
+    align-items: center;
+
+    column-gap: 16px;
+    row-gap: 4px;
+
+    padding: 15px;
+    margin: 0;
+
+    min-height: 110px;
+
+    background: white;
+    border: none;
+    border-radius: 18px;
+    box-shadow: none;
+}
+
+.circular-progress {
+    position: relative;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+
+    width: 78px;
+    height: 78px;
+    margin: 0;
+}
+
+.circular-progress svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.ring-background {
+    fill: none;
+    stroke: #E4EAF5;
+    stroke-width: 9;
+}
+
+.ring-fill {
+    fill: none;
+    stroke-width: 9;
+    stroke-linecap: butt;
+}
+
+.ring-text {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ring-text strong {
+    font-size: 17px;
+    font-weight: 800;
+    color: #182B43;
+}
+
+.ring-text small {
+    display: none;
+}
+
+.circular-card > small {
+    grid-column: 2;
+    grid-row: 1;
+
+    align-self: end;
+
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0;
+    color: #182B43;
+}
+
+.circular-card p {
+    grid-column: 2;
+    grid-row: 2;
+
+    align-self: start;
+
+    font-size: 14px;
+    color: #666666;
+    margin: 0;
+}
+
+.circular-card button {
+    display: none;
+}
+
+
+/* ============================================
+   MEET JOE PATIENT STORY
+============================================ */
+
+.patient-story {
+    padding: 22px;
+    border-radius: 20px;
+    background: white;
+}
+
+.patient-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 15px;
+}
+
+.patient-photo {
+    width: 82px;
+    height: 82px;
+
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: #EAF4FF;
+}
+
+.patient-header h2 {
+    font-size: 24px;
+    margin: 0 0 6px;
+    color: #182B43;
+}
+
+.patient-header p {
+    margin: 0;
+    font-size: 15px;
+    color: #666666;
+}
+
+.patient-description {
+    color: #607693;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.patient-details {
+    border-top: 1px solid #E4EAF5;
+    padding-top: 12px;
+}
+
+.patient-detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 0;
+
+    font-size: 16px;
+    color: #666666;
+}
+
+.patient-detail strong {
+    font-size: 17px;
+    color: #182B43;
+}
+
+.patient-profile-button {
+    width: 100%;
+    margin-top: 12px;
+
+    background: #E8EEFF;
+    color: #405BD0;
+
+    font-size: 15px;
+    padding: 13px;
+    border-radius: 10px;
+}
+
+
+/* ============================================
+   RECOVERY GOALS CARD
+============================================ */
+
+#content .grid > .card:has(.task) {
+    padding: 22px;
+}
+
+.task {
+    padding: 22px 0;
+    font-size: 15px;
+    font-weight: 400;
+    color: #607693;
+    border-bottom: 1px solid #E4EAF5;
+}
+
+.task input {
+    width: 17px;
+    height: 17px;
+    accent-color: #4C60CD;
+}
+
+
+/* ============================================
+   RESPONSIVE DESIGN
+============================================ */
+
+@media (max-width: 1250px) {
+
+    .stats .circular-card {
+        grid-template-columns: 62px minmax(0, 1fr);
+        column-gap: 10px;
+        padding: 12px;
+    }
+
+    .circular-progress {
+        width: 62px;
+        height: 62px;
+    }
+
+    .circular-card > small {
+        font-size: 14px;
+    }
+
+    .circular-card p {
+        font-size: 12px;
+    }
+
+    .ring-text strong {
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 1000px) {
+
+    .hero-with-reminder {
+        padding: 24px;
+        padding-bottom: 0;
+    }
+
+    .daily-reminder {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+
+        width: calc(100% + 48px);
+        margin: 24px -24px 0;
+        padding: 24px;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stats .circular-card {
+        grid-template-columns: 72px minmax(0, 1fr);
+    }
+
+    .circular-progress {
+        width: 72px;
+        height: 72px;
+    }
+
+    .patient-header h2 {
+        font-size: 21px;
+    }
+
+}
+
+/* ============================================
+   FIX HORIZONTAL RECOVERY CALENDAR
+============================================ */
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    gap: 15px;
+}
+
+.calendar-navigation {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Seven columns: Sunday through Saturday */
+
+.calendar-grid {
+    display: grid !important;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+}
+
+/* Weekday headings */
+
+.calendar-weekday {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #69829C;
+    padding: 12px 0;
+}
+
+/* Individual dates */
+
+.calendar-day {
+    position: relative;
+    width: 100%;
+    min-height: 65px;
+    aspect-ratio: 1.4;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #F0F5FF;
+    color: #102A43;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    border: 1px solid #E0E9F8;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 0;
+}
+
+.calendar-day:hover {
+    background: #DCE7FF;
+}
+
+/* Today's date */
+
+.calendar-day.calendar-today {
+    background: #4C60CD;
+    color: white;
+}
+
+/* Appointment and refill dates */
+
+.calendar-day.calendar-event {
+    background: #DFF8EF;
+    color: #147D64;
+}
+
+/* Selected date */
+
+.calendar-day.calendar-selected {
+    outline: 2px solid #4C60CD;
+    outline-offset: 2px;
+}
+
+/* Event indicator */
+
+.calendar-dot {
+    position: absolute;
+    bottom: 6px;
+    left: calc(50% - 3px);
+    width: 6px;
+    height: 6px;
+    background: #14B8A6;
+    border-radius: 50%;
+}
+
+/* Calendar container */
+
+.calendar-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.calendar-legend {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #69829C;
+}
+
+/* Smaller screens */
+
+@media (max-width: 600px) {
+
+    .calendar-grid {
+        gap: 5px;
+    }
+
+    .calendar-day {
+        min-height: 40px;
+        font-size: 13px;
+        padding: 5px;
+    }
+
+    .calendar-weekday {
+        font-size: 11px;
+    }
+
+    .calendar-header {
+        flex-wrap: wrap;
+    }
+}
+/* Fix calendar button text visibility */
+
+.calendar-schedule-item {
+    color: #FFFFFF;
+}
+
+.calendar-schedule-item strong {
+    color: #FFFFFF;
+}
+
+.calendar-schedule-item small {
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.calendar-schedule-item .schedule-status {
+    color: #FFFFFF;
+}
+/* PulseGuard AI */
+.pulse-inputs {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px;}
+.pulse-outcome {margin-top:20px;padding:20px;background:#F7FAFF;border:1px solid var(--border);border-radius:16px;}
+.pulse-score {display:flex;justify-content:space-between;gap:12px;}
+.pulse-outcome .progress {margin:8px 0 16px;}
+@media(max-width:800px){.pulse-inputs{grid-template-columns:1fr;}}
